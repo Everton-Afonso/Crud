@@ -8,7 +8,7 @@
 ?>
 <div class="container">
 
-    <a href="{{route('cadastrar')}}" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Produto</a>
+    <a href="{{route('products.get.insert')}}" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Produto</a>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -34,10 +34,10 @@
                             <td>{{$carro -> cor}}</td>
                             <td>{{$carro -> preco}}</td>
                             <td class="text-center">
-                                <a title="Editar Produto" href="{{route('edit', $carro)}}">
+                                <a title="Editar Produto" href="{{route('products.get.edit', $carro)}}">
                                     <i class="fas fa-edit text-info mr-2"></i>
                                 </a>
-                                <a title="Apagar Produto" href="{{route('deleteItem', $carro)}}"> 
+                                <a title="Apagar Produto" href="{{route('products.get.deleteItem', $carro)}}"> 
                                     <i class="fas fa-trash text-danger mr-2"></i>
                                 </a>
                             </td>
@@ -48,9 +48,6 @@
             </div>
         </div>
     </div>
-
-    <!-- {{$carros->links()}} -->
-
 </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -77,7 +74,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-        <form method="POST" action="{{route('deletar', $id)}}">
+        <form method="POST" action="{{route('products.delete.deletar', $id)}}">
           @csrf
           @method('delete')
           <button type="submit" class="btn btn-danger">Sim</button>
@@ -86,7 +83,7 @@
     </div>
   </div>
 </div>
-
+<!-- referencia para abertura do modal -->
 <?php 
     if(@$id != ""){
     echo "<script>$('#exampleModal').modal('show');</script>";

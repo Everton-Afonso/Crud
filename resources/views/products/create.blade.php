@@ -2,7 +2,7 @@
 @section('title', 'Criar Produto')
 @section('content')
     <div class="container mt-4">
-        <form method="POST" action="{{route('insert')}}">
+        <form method="POST" action="{{route('products.post.insert')}}">
             @csrf
             <div class="row">
                 <div class="col-md-6">

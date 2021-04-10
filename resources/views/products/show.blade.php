@@ -8,7 +8,7 @@
         <p class="lead">Modelo: <?php echo $carros->cor ?></p>
         <p class="lead">Modelo: <?php echo $carros->preco ?></p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="{{route('produtos')}}" role="button">Voltar</a>
+            <a class="btn btn-primary btn-lg" href="{{route('products')}}" role="button">Voltar</a>
         </p>
     </div>
 @endsection

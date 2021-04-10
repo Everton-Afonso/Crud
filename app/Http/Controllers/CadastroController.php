@@ -9,11 +9,11 @@ class CadastroController extends Controller
 {
     public function index(){
         $carros = carro::orderby('id', 'desc')->paginate();
-        return view('produtos.index', ['carros' => $carros]);
+        return view('products.index', ['carros' => $carros]);
     }
 
     public function create(){
-        return view('produtos.create');
+        return view('products.create');
     }
 
     public function insert(Request $request){
@@ -25,16 +25,16 @@ class CadastroController extends Controller
 
         $carro->save();
 
-        return redirect()->route('produtos');
+        return redirect()->route('products');
     }
 
     public function show($id){
         $carro = carro::find($id);
-        return view('produtos.show', ['carros' => $carro]);
+        return view('products.show', ['carros' => $carro]);
     }
 
     public function edit(carro $carro){
-        return view('produtos.edit', ['carro' => $carro]);
+        return view('products.edit', ['carro' => $carro]);
     }
 
     public function editar(Request $request, carro $carro){
@@ -45,16 +45,16 @@ class CadastroController extends Controller
 
         $carro->save();
 
-        return redirect()->route('produtos');
+        return redirect()->route('products');
     }
 
     public function deletar(carro $carro){
         $carro->delete();
-        return redirect()->route('produtos');
+        return redirect()->route('products');
     }
 
     public function deleteItem($id){
         $carros = carro::orderby('id', 'desc')->paginate();
-        return view('produtos.index', ['carros' => $carros, 'id' => $id]);
+        return view('products.index', ['carros' => $carros, 'id' => $id]);
     }
 }

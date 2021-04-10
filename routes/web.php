@@ -15,18 +15,18 @@ use App\Http\Controllers\HomeController;
 */
 
 
-Route::get('/', [CadastroController::class, 'index'])->name('produtos');
+Route::get('/', [CadastroController::class, 'index'])->name('products');
 
-Route::get('produtos/inserir', [CadastroController::class, 'create'])->name('cadastrar');
+Route::get('products/insert', [CadastroController::class, 'create'])->name('products.get.insert');
 
-Route::get('produtos/{id}', [CadastroController::class, 'show'])->name('descricao');
+Route::get('products/{id}', [CadastroController::class, 'show'])->name('products.get.show');
 
-Route::post('produtos', [CadastroController::class, 'insert'])->name('insert');
+Route::post('products', [CadastroController::class, 'insert'])->name('products.post.insert');
 
-Route::get('produtos/{carro}/edit', [CadastroController::class, 'edit'])->name('edit');
+Route::get('products/{carro}/edit', [CadastroController::class, 'edit'])->name('products.get.edit');
 
-Route::put('produtos/{carro}', [CadastroController::class, 'editar'])->name('editar');
+Route::put('products/{carro}', [CadastroController::class, 'editar'])->name('products.put.editar');
 
-Route::get('produtos/{carro}/delete', [CadastroController::class, 'deleteItem'])->name('deleteItem');
+Route::get('products/{carro}/delete', [CadastroController::class, 'deleteItem'])->name('products.get.deleteItem');
 
-Route::delete('produtos/{carro}', [CadastroController::class, 'deletar'])->name('deletar');
+Route::delete('products/{carro}', [CadastroController::class, 'deletar'])->name('products.delete.deletar');

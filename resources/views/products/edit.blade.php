@@ -2,7 +2,7 @@
 @section('title', 'Editar Produto')
 @section('content')
     <div class="container mt-4">
-        <form method="POST" action="{{route('editar', $carro)}}">
+        <form method="POST" action="{{route('products.put.editar', $carro)}}">
             @csrf
             @method('put')
             <div class="row">
